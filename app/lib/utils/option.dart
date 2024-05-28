@@ -6,8 +6,8 @@ import 'question.dart';
 
 class Option {
   final String option;
-  final Answer? answer;
-  final Question? question;
+  Answer? answer;
+  Question? question;
 
   Option(this.option, this.answer, this.question);
 

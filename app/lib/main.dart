@@ -30,7 +30,9 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'My test',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme:
+            ColorScheme.fromSeed(seedColor: Color.fromRGBO(0, 0, 255, 1)),
+        scaffoldBackgroundColor: Colors.white,
         useMaterial3: true,
       ),
       home: data[0] == ""

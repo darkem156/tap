@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(token ?? ""),
+            Image.asset('bg.jpg', width: 200, height: 200),
             TextField(
               controller: userController,
               decoration: const InputDecoration(
@@ -96,6 +96,13 @@ class _LoginPageState extends State<LoginPage> {
                 signup(context);
               },
               child: const Text('Registrarse'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                setState(() => setData(
+                    {"token": " ", "username": "invitado", "type": "S"}));
+              },
+              child: const Text('Continuar como invitado'),
             ),
           ],
         ),

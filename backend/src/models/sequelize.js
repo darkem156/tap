@@ -24,4 +24,4 @@ const Assistance = sequelize.define('assistance', assistance)
 
 const query = async query => sequelize.query(query);
 
-module.exports = { User, Exam, query }
+module.exports = { User, Exam, Assistance, query }

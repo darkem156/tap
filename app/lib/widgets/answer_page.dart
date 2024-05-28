@@ -17,8 +17,9 @@ class AnswerPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('Reason: ${answer.reason}'),
-            Image.asset('assets${answer.img}'),
+            Text('Razón: ${answer.reason}'),
+            Text(answer.solution),
+            Image.network(answer.img, width: 200),
           ],
         ),
       ),

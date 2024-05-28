@@ -20,26 +20,26 @@ class SelectorPage extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        const QuestionPage(title: 'Asistencia')),
+                MaterialPageRoute(builder: (context) => QuestionSelect()),
               );
             },
             child: const Text('Sección de asistencia'),
           ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => ExamPage(
-                          title: 'Examen',
-                          data: data,
-                        )),
-              );
-            },
-            child: const Text('Sección de evaluación'),
-          ),
+          data[0].trim() != ""
+              ? ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ExamPage(
+                                title: 'Examen',
+                                data: data,
+                              )),
+                    );
+                  },
+                  child: const Text('Sección de evaluación'),
+                )
+              : const Text('No puedes hacer un examen sin iniciar sesion'),
         ],
       )),
     );
