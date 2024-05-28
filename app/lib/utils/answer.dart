@@ -1,5 +1,5 @@
 class Answer {
-  final String reason;
+  String reason;
   final String solution;
   String img;
 

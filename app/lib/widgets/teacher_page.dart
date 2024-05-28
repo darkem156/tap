@@ -108,6 +108,7 @@ class _TeacherPageState extends State<TeacherPage> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
+            const Text("Examenes"),
             Container(
               alignment: Alignment.center,
               child: ListView.builder(
@@ -138,6 +139,9 @@ class _TeacherPageState extends State<TeacherPage> {
                             (key, value) => setState(() => scores
                                 .add('Estudiante: $key, Calificación: $value')),
                           );
+                          if (scores.isEmpty) {
+                            setState(() => scores.add('No hay calificaciones'));
+                          }
                         },
                         child: Text(exams[index].name),
                       ));

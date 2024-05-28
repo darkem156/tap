@@ -71,20 +71,25 @@ class _LoginPageState extends State<LoginPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('bg.jpg', width: 200, height: 200),
-            TextField(
-              controller: userController,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Nombre de usuario',
-              ),
-            ),
-            TextField(
-              controller: passwordController,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Contraseña',
-              ),
-            ),
+            Container(
+                margin: EdgeInsets.all(10),
+                child: TextField(
+                  controller: userController,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Nombre de usuario',
+                  ),
+                )),
+            Container(
+                margin: EdgeInsets.all(10),
+                child: TextField(
+                  controller: passwordController,
+                  obscureText: true,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Contraseña',
+                  ),
+                )),
             ElevatedButton(
               onPressed: () {
                 login(context);

@@ -103,10 +103,11 @@ class _QuestionPageState extends State<QuestionPage> {
       } else if (text.contains("<o>")) {
         allOptions.add(Option(text.replaceAll("<o>", ""), null, null));
       } else if (text.contains("<a>")) {
-        allAnswers.add(Answer(text.replaceAll("<a>", ""), "", ""));
+        allAnswers.add(Answer("", text.replaceAll("<a>", ""), ""));
       } else if (text.contains("<i>")) {
         allAnswers.last.img = text.replaceAll("<i>", "").replaceAll("</i>", "");
       } else if (text.contains("</a>")) {
+        allAnswers.last.reason = allOptions.last.option;
         allOptions.last.answer = allAnswers.last;
         allAnswers.removeLast();
       } else if (text.contains("</o>")) {
